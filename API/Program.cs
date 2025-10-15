@@ -7,7 +7,7 @@ DotEnv.Load(options: new dotenv.net.DotEnvOptions(
         Path.Combine(Directory.GetCurrentDirectory(), ".env"),   // API root
         Path.Combine(AppContext.BaseDirectory, ".env")           // build output folder
     },
-    overwriteExistingVars: false // ne pas écraser des vraies variables d'env
+    overwriteExistingVars: false // do not overwrite real environment variables
 ));
 
 var builder = WebApplication.CreateBuilder(args);
