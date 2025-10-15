@@ -1,7 +1,6 @@
 using System;
 using Infrastructure;
 using Infrastructure.Context;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
