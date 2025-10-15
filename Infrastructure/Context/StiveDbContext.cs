@@ -8,4 +8,10 @@ public class StiveDbContext : DbContext
     public StiveDbContext(DbContextOptions<StiveDbContext> options) : base(options)
     {
     }
+    public DbSet<CustomerEntity> Customers { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new CustomerEntityConfiguration());
+    }
 }
