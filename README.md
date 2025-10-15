@@ -9,7 +9,7 @@ L'ajustement du stock se fait par les feuilles d'inventaires. L'opérateur rense
 ```mermaid
     sequenceDiagram
 
-    InventoryLine->>InventoryHeader: Déclaration quantités réeles
+    InventoryLine->>InventoryHeader: Déclaration quantités réelles
     InventoryHeader->>ItemLedger: Validation feuille, création d'entrées dans le registre pour ajustement des écarts
 ```
 
