@@ -40,6 +40,15 @@ public static class DIExtensions
                         Password = dbOpt.Password,
                         TrustServerCertificate = dbOpt.TrustServerCertificate,
                     };
+                    if (!string.IsNullOrWhiteSpace(dbOpt.User))
+                    {
+                        csb.UserID = dbOpt.User;
+                        csb.Password = dbOpt.Password;
+                    }
+                    else
+                    {
+                        csb.IntegratedSecurity = true;
+                    }
 
                     options.UseSqlServer(csb.ConnectionString);
                 });
