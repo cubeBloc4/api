@@ -15,7 +15,7 @@ public class SupplierRepository : ISupplierRepository
 
     public async Task AddSupplier(SupplierDto supplier)
     {
-        if (await _stiveDbContext.Supplier.AnyAsync(c => c.Name1 == supplier.Email))
+        if (await _stiveDbContext.Supplier.AnyAsync(c => c.Email == supplier.Email))
         {
             throw new InvalidOperationException("Ce compte existe déjà");
         }
