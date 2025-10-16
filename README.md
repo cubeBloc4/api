@@ -10,7 +10,7 @@ Montez votre propre base en local pour le développement.
 ### Variables d'environnement
 
 Des variables d'environnement sont à renseigner dans le projet API.
-Duppliquer le `.env.example`, renommer le en `.env` et renseigner les variables.
+Dupliquez le `.env.example`, renommez-le en `.env` et renseignez les variables.
 
 ### Lancement
 
