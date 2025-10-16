@@ -25,8 +25,7 @@ dotnet run --project API
 Exécutez la commande suivante pour générer les fichiers de migration
 
 ```bash
-dotnet ef migrations add <migrationName> -p Infrastructure -s API
-```
+dotnet ef migrations add MIGRATION_NAME -p Infrastructure -s API
 
 Appliquer ensuite la migration avec la commande:
 
