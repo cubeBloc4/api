@@ -7,11 +7,11 @@ namespace API;
 [ApiController]
 [Route("[controller]")]
 
-public class StiveController : ControllerBase
+public class CustomerController : ControllerBase
 {
     private readonly ICustomerRepository _customerRepository;
 
-    public StiveController(ICustomerRepository customerRepository)
+    public CustomerController(ICustomerRepository customerRepository)
     {
         _customerRepository = customerRepository;
     }
