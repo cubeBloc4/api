@@ -23,4 +23,26 @@ public class StiveController : ControllerBase
         return customer;
     }
 
+    [HttpPost("customers")]
+    public async Task<IActionResult> AddCustomer([FromBody] CustomerPasswordDto customerPassword)
+    {
+        if (customerPassword == null)
+            return BadRequest("Le corps de la requête est vide.");
+
+        try
+        {
+            await _customerRepository.AddCustomer(customerPassword);
+            return Ok("Client créé avec succès !");
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Erreur serveur : {ex.Message}");
+        }
+    }
+
+
 }

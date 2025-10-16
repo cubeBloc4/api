@@ -15,7 +15,7 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task AddCustomer(CustomerPasswordDto customerPassword)
     {
-        if (await _stiveDbContext.Customers.AnyAsync(c => c.UserName == customerPassword.UserName || c.Email == customerPassword.Email))
+        if (await _stiveDbContext.Customer.AnyAsync(c => c.UserName == customerPassword.UserName || c.Email == customerPassword.Email))
         {
             throw new InvalidOperationException("Ce compte existe déjà");
         }
@@ -36,13 +36,13 @@ public class CustomerRepository : ICustomerRepository
             Country = customerPassword.Country
         };
 
-        _stiveDbContext.Customers.Add(customer);
+        _stiveDbContext.Customer.Add(customer);
         await _stiveDbContext.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<CustomerDto>> GetAllCustomer()
     {
-        var Customers = await _stiveDbContext.Customers.ToListAsync();
+        var Customers = await _stiveDbContext.Customer.ToListAsync();
 
         return Customers.Select(b => new CustomerDto
         {

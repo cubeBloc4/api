@@ -1,4 +1,5 @@
 using System;
+using Core;
 using Infrastructure;
 using Infrastructure.Context;
 using Microsoft.Data.SqlClient;
@@ -52,5 +53,6 @@ public static class DIExtensions
 
                     options.UseSqlServer(csb.ConnectionString);
                 });
+        services.AddTransient<ICustomerRepository, CustomerRepository>();
     }
 }

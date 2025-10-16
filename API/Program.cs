@@ -24,6 +24,7 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+
 // Initial DB connection test
 using (var scope = app.Services.CreateScope())
 {
