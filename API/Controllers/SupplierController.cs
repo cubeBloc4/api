@@ -28,7 +28,7 @@ public class SupplierController : ControllerBase
         try
         {
             await _supplierRepository.AddSupplier(supplierDto);
-            return Ok("Client créé avec succès !");
+            return Ok("Fournisseur créé avec succès !");
         }
         catch (InvalidOperationException ex)
         {
