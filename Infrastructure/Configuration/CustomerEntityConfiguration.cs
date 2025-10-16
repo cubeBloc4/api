@@ -12,7 +12,7 @@ public class CustomerEntityConfiguration : IEntityTypeConfiguration<CustomerEnti
         builder.Property(c => c.FirstName).HasColumnName("firstname").IsRequired();
         builder.Property(c => c.LastName).HasColumnName("lastname").IsRequired();
         builder.Property(c => c.UserName).HasColumnName("username").IsRequired();
-        builder.Property(c => c.HashPassword).HasColumnName("hashpassword").IsRequired();
+        builder.Property(c => c.HashedPassword).HasColumnName("hashedpassword").IsRequired();
         builder.Property(c => c.Email).HasColumnName("email").IsRequired();
         builder.Property(c => c.Address1).HasColumnName("address1");
         builder.Property(c => c.Address2).HasColumnName("address2");
