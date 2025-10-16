@@ -2,10 +2,10 @@
 
 ## Initialisation du projet
 
-### Base de donnée
+### Base de données
 
-Ce projet est conçu pour fonctionner avec une base de donnée SQL Server.
-Monter votre propre base en local pour le développement.
+Ce projet est conçu pour fonctionner avec une base de données SQL Server.
+Montez votre propre base en local pour le développement.
 
 ### Variables d'environnement
 
