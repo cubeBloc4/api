@@ -1,5 +1,25 @@
 # api
 
+## Initialisation du projet
+
+### Base de donnée
+
+Ce projet est conçu pour fonctionner avec une base de donnée SQL Server.
+Monter votre propre base en local pour le développement.
+
+### Variables d'environnement
+
+Des variables d'environnement sont à renseigner dans le projet API.
+Duppliquer le `.env.example`, renommer le en `.env` et renseigner les variables.
+
+### Lancement
+
+À la racine de la solution, executer la commande suivante:
+
+```bash
+dotnet run --project API
+```
+
 ## Inventaire
 
 Les stocks ne sont pas gérés comme un champ qu'on vient incrémenter ou décrémenter. Les stocks sont le calcul de l'ensemble des écritures dans le registre article.
