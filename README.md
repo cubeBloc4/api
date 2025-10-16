@@ -27,7 +27,7 @@ Exécutez la commande suivante pour générer les fichiers de migration
 ```bash
 dotnet ef migrations add MIGRATION_NAME -p Infrastructure -s API
 
-Appliquer ensuite la migration avec la commande:
+Appliquez ensuite la migration avec la commande :
 
 ```bash
 dotnet ef database update -p Infrastructure -s API
