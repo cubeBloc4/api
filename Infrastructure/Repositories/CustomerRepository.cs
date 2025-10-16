@@ -13,9 +13,31 @@ public class CustomerRepository : ICustomerRepository
         _stiveDbContext = stiveDbContext;
     }
 
-    public Task AddCustomer(CustomerPasswordDto customerPassword)
+    public async Task AddCustomer(CustomerPasswordDto customerPassword)
     {
-        throw new NotImplementedException();
+        if (await _stiveDbContext.Customers.AnyAsync(c => c.UserName == customerPassword.UserName || c.Email == customerPassword.Email))
+        {
+            throw new InvalidOperationException("Ce compte existe déjà");
+        }
+
+        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(customerPassword.Password);
+
+        var customer = new CustomerEntity
+        {
+            FirstName = customerPassword.FirstName,
+            LastName = customerPassword.LastName,
+            UserName = customerPassword.UserName,
+            HashedPassword = hashedPassword,
+            Email = customerPassword.Email,
+            Address1 = customerPassword.Address1,
+            Address2 = customerPassword.Address2,
+            City = customerPassword.City,
+            ZipCode = customerPassword.ZipCode,
+            Country = customerPassword.Country
+        };
+
+        _stiveDbContext.Customers.Add(customer);
+        await _stiveDbContext.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<CustomerDto>> GetAllCustomer()
