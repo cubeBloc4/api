@@ -20,6 +20,20 @@ Dupliquez le `.env.example`, renommez-le en `.env` et renseignez les variables.
 dotnet run --project API
 ```
 
+## Base de données
+
+Exécutez la commande suivante pour générer les fichiers de migration
+
+```bash
+dotnet ef migrations add <migrationName> -p Infrastructure -s API
+```
+
+Appliquer ensuite la migration avec la commande:
+
+```bash
+dotnet ef database update -p Infrastructure -s API
+```
+
 ## Inventaire
 
 Les stocks ne sont pas gérés comme un champ qu'on vient incrémenter ou décrémenter. Les stocks sont le calcul de l'ensemble des écritures dans le registre article.
