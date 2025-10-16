@@ -14,7 +14,7 @@ Dupliquez le `.env.example`, renommez-le en `.env` et renseignez les variables.
 
 ### Lancement
 
-À la racine de la solution, executer la commande suivante:
+À la racine de la solution, exécutez la commande suivante:
 
 ```bash
 dotnet run --project API
