@@ -24,7 +24,10 @@ dotnet run --project API
 
 Exécutez la commande suivante pour générer les fichiers de migration
 
+**Prérequis :** installez l’outil EF Core CLI si ce n’est pas déjà fait :
+
 ```bash
+dotnet tool install --global dotnet-ef
 dotnet ef migrations add MIGRATION_NAME -p Infrastructure -s API
 
 Appliquez ensuite la migration avec la commande :
