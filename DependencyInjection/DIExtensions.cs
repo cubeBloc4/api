@@ -53,7 +53,8 @@ public static class DIExtensions
 
                     options.UseSqlServer(csb.ConnectionString);
                 });
-        services.AddTransient<ICustomerRepository, CustomerRepository>();
+        services.AddTransient<IUOMRepository, CustomerRepository>();
         services.AddTransient<ISupplierRepository, SupplierRepository>();
+        services.AddTransient<IUnitOfMeasureRepository, UnitOfMeasureRepository>();
     }
 }

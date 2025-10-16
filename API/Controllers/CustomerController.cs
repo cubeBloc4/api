@@ -8,9 +8,9 @@ namespace API;
 
 public class CustomerController : ControllerBase
 {
-    private readonly ICustomerRepository _customerRepository;
+    private readonly IUOMRepository _customerRepository;
 
-    public CustomerController(ICustomerRepository customerRepository)
+    public CustomerController(IUOMRepository customerRepository)
     {
         _customerRepository = customerRepository;
     }

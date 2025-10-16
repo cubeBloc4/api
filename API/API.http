@@ -1,1 +1,28 @@
 @API_HostAddress = http://localhost:5029
+
+### Get all UOMs
+GET {{API_HostAddress}}/unitofmeasure
+Accept: application/json
+
+### Add a UOM
+POST {{API_HostAddress}}/unitofmeasure
+Content-Type: application/json
+
+{
+    "code": "pièce"
+}
+
+### Get a UOM by code
+GET {{API_HostAddress}}/unitofmeasure/pièce
+Accept: application/json
+
+### Update a UOM
+PUT {{API_HostAddress}}/unitofmeasure/pièce2
+Content-Type: application/json
+
+{
+    "code": "pièce"
+}
+
+### Delete a UOM
+DELETE {{API_HostAddress}}/unitofmeasure/pièce

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure;
 
-public class CustomerRepository : ICustomerRepository
+public class CustomerRepository : IUOMRepository
 {
     private readonly StiveDbContext _stiveDbContext;
 
