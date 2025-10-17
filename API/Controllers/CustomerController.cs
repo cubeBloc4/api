@@ -23,7 +23,7 @@ public class CustomerController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddCustomer([FromBody] CustomerPasswordDto customerPassword)
+    public async Task<IActionResult> AddCustomer([FromBody] AddCustomerPasswordRequest customerPassword)
     {
         if (customerPassword == null)
             return BadRequest("Le corps de la requête est vide.");
@@ -59,6 +59,11 @@ public class CustomerController : ControllerBase
         if (!DeleteCustomer) return NotFound();
 
         return Ok("Supprimé");
+
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateCustomer(int id, AddCustomerRequest customer){
 
     }
 }

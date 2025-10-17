@@ -7,4 +7,5 @@ public interface ICustomerRepository
     public Task<CustomerDto?> GetCustomerById(int id);
     public Task<bool> UpdateCustomer(int id, CustomerDto customer);
     public Task<bool> DeleteCustomer(int id);
+    public Task<bool> UpdateCustomerPassword(int id, CustomerPasswordDto customerPassword);
 }

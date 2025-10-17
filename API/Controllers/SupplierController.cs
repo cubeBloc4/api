@@ -20,14 +20,14 @@ public class SupplierController : ControllerBase
     }
 
     [HttpPost("suppliers")]
-    public async Task<IActionResult> AddCustomer([FromBody] SupplierDto supplierDto)
+    public async Task<IActionResult> AddCustomer([FromBody] AddSupplierRequest supplier)
     {
-        if (supplierDto == null)
+        if (supplier == null)
             return BadRequest("Le corps de la requête est vide.");
 
         try
         {
-            await _supplierRepository.AddSupplier(supplierDto);
+            await _supplierRepository.AddSupplier(supplier);
             return Ok("Fournisseur créé avec succès !");
         }
         catch (InvalidOperationException ex)
